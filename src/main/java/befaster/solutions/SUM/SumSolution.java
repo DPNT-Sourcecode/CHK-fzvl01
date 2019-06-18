@@ -1,6 +1,5 @@
 package befaster.solutions.SUM;
 
-import befaster.runner.SolutionNotImplementedException;
 
 public class SumSolution {
 
@@ -9,4 +8,5 @@ public class SumSolution {
     }
 
 }
+
 
