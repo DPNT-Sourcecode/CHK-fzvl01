@@ -13,12 +13,13 @@ public class CheckoutSolution {
 
         try {
             int total = Arrays.stream(split).map(Product::valueOf).map(Product::getPrice).reduce(0, Integer::sum);
-            
+
         } catch (IllegalArgumentException e) {
             return -1;
         }
     }
 }
+
 
 
 
