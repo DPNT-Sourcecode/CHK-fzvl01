@@ -56,8 +56,9 @@ public class ShoppingCart {
     }
 
     public void removeMostExpensive(int numberOfProducts, List<Product> products) {
-        products.stream().sorted(Comparator.comparingInt(Product::getPrice)).reduce(numberOfProducts, (subtotal, product) -> tryToRemove(subtotal, product));
+        products.stream().sorted(Comparator.comparingInt(Product::getPrice)).reduce(numberOfProducts, this::tryToRemove, Integer::sum);
     }
 }
+
 
 

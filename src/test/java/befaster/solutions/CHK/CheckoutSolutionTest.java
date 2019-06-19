@@ -67,7 +67,7 @@ public class CheckoutSolutionTest {
 
     @Test
     public void checkouTwoK() {
-        assertEquals(150, checkoutSolution.checkout("KK").intValue());
+        assertEquals(120, checkoutSolution.checkout("KK").intValue());
     }
 
     @Test
