@@ -29,9 +29,8 @@ public class ShoppingCart {
     }
 
     public boolean contains(Map<Product, Integer> products) {
-        products.forEach((product, integer) -> {
-            productCountMap.containsKey(product) && productCountMap.ge
-        });
+        return products.entrySet().stream().allMatch(productEntry -> productCountMap.containsKey(productEntry.getKey()) && productCountMap.get(productEntry.getKey()) >= productEntry.getValue());
     }
 }
+
 
