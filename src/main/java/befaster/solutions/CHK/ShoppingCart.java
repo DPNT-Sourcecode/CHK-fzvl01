@@ -1,6 +1,7 @@
 package befaster.solutions.CHK;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ShoppingCart {
@@ -27,7 +28,12 @@ public class ShoppingCart {
         return products.entrySet().stream().allMatch(productEntry -> productCountMap.containsKey(productEntry.getKey()) && productCountMap.get(productEntry.getKey()) >= productEntry.getValue());
     }
 
+    public boolean containsAtLeast(int numberOfProducts, List<Product> products) {
+        return products.stream().map(this::get).reduce(0, Integer::sum) >= numberOfProducts;
+    }
+
     public void remove(Map<Product, Integer> products) {
         products.forEach((product, num) -> productCountMap.put(product, productCountMap.get(product)-num));
     }
 }
+

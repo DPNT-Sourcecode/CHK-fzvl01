@@ -15,6 +15,7 @@ public class CheckoutSolution {
     static {
         multiBuyOfferList = Arrays.asList(MultiBuyOffer.values());
         multiBuyOfferList.sort(Comparator.comparingInt(MultiBuyOffer::getDiscount).reversed());
+        groupDiscountOfferList = Arrays.asList(GroupDiscountOffer.values());
     }
 
     public Integer checkout(String skus) {
@@ -39,6 +40,10 @@ public class CheckoutSolution {
                     total = total - multiBuyOffer.getDiscount();
                 }
             }
+
+            for (GroupDiscountOffer groupDiscountOffer : groupDiscountOfferList) {
+                while ()
+            }
             return total;
         } catch (IllegalArgumentException e) {
             return -1;
@@ -46,4 +51,5 @@ public class CheckoutSolution {
     }
 
 }
+
 
