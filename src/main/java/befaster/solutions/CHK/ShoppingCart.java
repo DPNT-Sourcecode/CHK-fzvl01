@@ -1,5 +1,6 @@
 package befaster.solutions.CHK;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,5 +36,16 @@ public class ShoppingCart {
     public void remove(Map<Product, Integer> products) {
         products.forEach((product, num) -> productCountMap.put(product, productCountMap.get(product)-num));
     }
+
+    public int tryToRemove(Product product, int num) {
+        //can add error validation later
+        productCountMap.get(product)
+        productCountMap.replace(product, productCountMap.get(product)-num);
+    }
+
+    public void removeMostExpensive(int numberOfProducts, List<Product> products) {
+        products.stream().sorted(Comparator.comparingInt(Product::getPrice))
+    }
 }
+
 

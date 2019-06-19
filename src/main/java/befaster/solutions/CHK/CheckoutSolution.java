@@ -42,7 +42,9 @@ public class CheckoutSolution {
             }
 
             for (GroupDiscountOffer groupDiscountOffer : groupDiscountOfferList) {
-                while ()
+                while (shoppingCart.containsAtLeast(groupDiscountOffer.getNumberOfProducts(), groupDiscountOffer.getProductList())) {
+
+                }
             }
             return total;
         } catch (IllegalArgumentException e) {
@@ -51,5 +53,6 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
