@@ -41,8 +41,8 @@ public class CheckoutSolutionTest {
     }
 
     @Test
-    public void checkoutManyMultiBuy() {
-        assertEquals(375, checkoutSolution.checkout("AAABBAAAAC").intValue());
+    public void checkoutTwoBAndFiveA() {
+        assertEquals(365, checkoutSolution.checkout("AAABBAAAAC").intValue());
     }
 
     @Test
