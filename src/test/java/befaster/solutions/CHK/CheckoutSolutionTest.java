@@ -63,5 +63,17 @@ public class CheckoutSolutionTest {
     @Test public void checkoutThreeF() {
         assertEquals(20, checkoutSolution.checkout("FFF").intValue());
     }
-    
+
+    @Test public void checkouTwoK() {
+        assertEquals(150, checkoutSolution.checkout("KK").intValue());
+    }
+
+    @Test public void checkoutThreeNOneM() {
+        assertEquals(135, checkoutSolution.checkout("NNMNM").intValue());
+    }
+
+    @Test public void checkoutThreeRThreeQ() {
+        assertEquals(210, checkoutSolution.checkout("RRQQRQ").intValue());
+    }
+
 }
