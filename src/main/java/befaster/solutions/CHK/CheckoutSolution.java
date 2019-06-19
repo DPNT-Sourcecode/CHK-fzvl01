@@ -11,7 +11,11 @@ public class CheckoutSolution {
 
         String[] split = skus.split("");
 
-        return Arrays.stream(split).map(Product::valueOf).map(Product::getPrice).reduce(0, Integer::sum);
+        try {
+            return Arrays.stream(split).map(Product::valueOf).map(Product::getPrice).reduce(0, Integer::sum);
+        } catch (IllegalArgumentException e) {
+            return -1;
+        }
     }
 }
 

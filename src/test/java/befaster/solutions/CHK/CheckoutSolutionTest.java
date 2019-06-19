@@ -32,6 +32,11 @@ public class CheckoutSolutionTest {
 
     @Test
     public void checkoutInvalidSKU() {
-        assertEquals(0, checkoutSolution.checkout("X").intValue());
+        assertEquals(-1, checkoutSolution.checkout("X").intValue());
+    }
+
+    @Test
+    public void checkoutMultiBuy() {
+        assertEquals(130, checkoutSolution.checkout("AAA").intValue());
     }
 }
