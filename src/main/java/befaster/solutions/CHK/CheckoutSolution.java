@@ -25,15 +25,13 @@ public class CheckoutSolution {
 
         try {
             List<Product> productList = Arrays.stream(split).map(Product::valueOf).collect(Collectors.toList());
-
-
-
+            productList.forEach(product -> shoppingCart.add(product));
 
             int total = productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
 
             for (MultiBuyOffer multiBuyOffer : multiBuyOfferList) {
                 int countSKU = (int) productList.stream()
-                        .filter(product -> product.equals(multiBuyOffer.getProduct())).count();
+                        .filter(product -> product.equals(multiBuyOffer.getRequirement())).count();
                 int numberOfDiscounts = (countSKU / multiBuyOffer.getNumberOfItems());
                 total = total - (offerDiscount(multiBuyOffer) * numberOfDiscounts);
             }
@@ -44,6 +42,7 @@ public class CheckoutSolution {
     }
 
     private int offerDiscount(MultiBuyOffer offer) {
-        return (offer.getNumberOfItems() * offer.getProduct().getPrice()) - offer.getPrice();
+        return (offer.getNumberOfItems() * offer.getRequirement().getPrice()) - offer.getPrice();
     }
 }
+

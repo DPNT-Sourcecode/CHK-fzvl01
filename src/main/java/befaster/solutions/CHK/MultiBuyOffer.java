@@ -4,7 +4,7 @@ public enum MultiBuyOffer {
     ThreeA(Product.A, 3, 130),
     TwoB(Product.B, 2, 45);
 
-    private Product product;
+    private Product requirement;
 
     private int numberOfItems;
 
@@ -12,15 +12,15 @@ public enum MultiBuyOffer {
 
     private int discount;
 
-    MultiBuyOffer(Product product, int numberOfItems, int price) {
-        this.product = product;
+    MultiBuyOffer(Product requirement, int numberOfItems, int price) {
+        this.requirement = requirement;
         this.numberOfItems = numberOfItems;
         this.price = price;
-        this.discount = (product.getPrice()*numberOfItems) - price;
+        this.discount = (requirement.getPrice()*numberOfItems) - price;
     }
 
-    public Product getProduct() {
-        return product;
+    public Product getRequirement() {
+        return requirement;
     }
 
     public int getNumberOfItems() {
@@ -35,3 +35,4 @@ public enum MultiBuyOffer {
         return discount;
     }
 }
+
