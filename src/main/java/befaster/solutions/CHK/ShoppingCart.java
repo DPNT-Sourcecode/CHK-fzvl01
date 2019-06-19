@@ -28,5 +28,3 @@ public class ShoppingCart {
         return productCountMap.getOrDefault(product, 0);
     }
 }
-
-
