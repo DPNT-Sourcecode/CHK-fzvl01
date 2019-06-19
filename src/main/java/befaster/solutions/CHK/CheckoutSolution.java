@@ -2,8 +2,12 @@ package befaster.solutions.CHK;
 
 
 import java.util.Arrays;
+import java.util.List;
 
 public class CheckoutSolution {
+
+    List<MultiBuyOffer> multiBuyOfferList = Arrays.asList(MultiBuyOffer.values());
+
     public Integer checkout(String skus) {
         if (skus.isEmpty()){
             return 0;
@@ -19,8 +23,3 @@ public class CheckoutSolution {
         }
     }
 }
-
-
-
-
-

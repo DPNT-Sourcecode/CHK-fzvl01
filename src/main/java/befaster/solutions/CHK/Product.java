@@ -16,4 +16,3 @@ public enum Product {
         return price;
     }
 }
-
