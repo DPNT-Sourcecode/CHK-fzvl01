@@ -30,6 +30,11 @@ public class CheckoutSolution {
             int total = productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
 
             for (MultiBuyOffer multiBuyOffer : multiBuyOfferList) {
+
+                if (shoppingCart.get(multiBuyOffer.getRequiredProduct()) >= multiBuyOffer.getRequiredNumber() && shoppingCart.get(multiBuyOffer.getReplaceProduct()) >= multiBuyOffer.getReplacedNumber()) {
+                    shoppingCart.remove(multiBuyOffer.get);
+                }
+
                 int countSKU = (int) productList.stream()
                         .filter(product -> product.equals(multiBuyOffer.getRequiredProduct())).count();
                 int numberOfDiscounts = (countSKU / multiBuyOffer.getRequiredNumber());
@@ -45,5 +50,6 @@ public class CheckoutSolution {
         return (offer.getRequiredNumber() * offer.getRequiredProduct().getPrice()) - offer.getPrice();
     }
 }
+
 
 
