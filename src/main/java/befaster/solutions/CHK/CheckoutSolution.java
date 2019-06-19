@@ -5,11 +5,15 @@ import java.util.Arrays;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
+        if (skus.isEmpty()){
+            return 0;
+        }
 
-        char[] charArray = skus.toCharArray();
+        String[] split = skus.split("");
 
-        return Arrays.stream().map(Product::valueOf).map(Product::getPrice).reduce(0, Integer::sum);
+        return Arrays.stream(split).map(Product::valueOf).map(Product::getPrice).reduce(0, Integer::sum);
     }
 }
+
 
 
