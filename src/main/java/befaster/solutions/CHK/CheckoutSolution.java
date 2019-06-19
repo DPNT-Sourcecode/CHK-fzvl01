@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class CheckoutSolution {
 
     private static List<MultiBuyOffer> multiBuyOfferList;
-    private ShoppingCart shoppingCart = new ShoppingCart();
+    private ShoppingCart shoppingCart;
 
     static {
         multiBuyOfferList = Arrays.asList(MultiBuyOffer.values());
@@ -20,6 +20,8 @@ public class CheckoutSolution {
         if (skus.isEmpty()){
             return 0;
         }
+
+        shoppingCart = new ShoppingCart();
 
         String[] split = skus.split("");
 
@@ -43,5 +45,6 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
