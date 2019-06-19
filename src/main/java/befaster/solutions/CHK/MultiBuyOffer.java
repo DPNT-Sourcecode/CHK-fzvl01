@@ -16,6 +16,10 @@ public enum MultiBuyOffer {
         this.price = price;
     }
 
+    public String getSKU() {
+        return SKU;
+    }
+
     public int getNumberOfItems() {
         return numberOfItems;
     }
@@ -24,4 +28,5 @@ public enum MultiBuyOffer {
         return price;
     }
 }
+
 
