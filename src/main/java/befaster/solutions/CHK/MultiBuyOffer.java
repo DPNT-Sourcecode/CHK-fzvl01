@@ -28,6 +28,3 @@ public enum MultiBuyOffer {
         return price;
     }
 }
-
-
-

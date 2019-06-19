@@ -36,8 +36,3 @@ public class CheckoutSolution {
         return (offer.getNumberOfItems() * offer.getProduct().getPrice()) - offer.getPrice();
     }
 }
-
-
-
-
-
