@@ -5,7 +5,8 @@ import befaster.runner.SolutionNotImplementedException;
 public class CheckoutSolution {
     public Integer checkout(String skus) {
         System.out.println("skus = [" + skus + "]");
-        throw new SolutionNotImplementedException();
+        return 0;
     }
 }
+
 
