@@ -6,12 +6,23 @@ public enum Product {
 
     private int price;
 
+    private MultiBuyOffer offer;
+
     Product(int price) {
         this.price = price;
     }
 
+    Product(int price, MultiBuyOffer offer) {
+        this.price = price;
+        this.offer = offer;
+    }
 
     public int getPrice() {
         return price;
     }
+
+    public MultiBuyOffer getOffer() {
+        return offer;
+    }
 }
+
