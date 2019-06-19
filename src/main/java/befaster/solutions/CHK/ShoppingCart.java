@@ -23,5 +23,10 @@ public class ShoppingCart {
         return productCountMap.containsKey(product) && productCountMap.get(product) > 0;
     }
 
+    public int get(Product product) {
+        return productCountMap.getOrDefault(product, 0);
+    }
+
 }
+
 
