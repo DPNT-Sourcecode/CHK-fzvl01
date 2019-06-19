@@ -60,20 +60,30 @@ public class CheckoutSolutionTest {
         assertEquals(20, checkoutSolution.checkout("FF").intValue());
     }
 
-    @Test public void checkoutThreeF() {
+    @Test
+    public void checkoutThreeF() {
         assertEquals(20, checkoutSolution.checkout("FFF").intValue());
     }
 
-    @Test public void checkouTwoK() {
+    @Test
+    public void checkouTwoK() {
         assertEquals(150, checkoutSolution.checkout("KK").intValue());
     }
 
-    @Test public void checkoutThreeNOneM() {
+    @Test
+    public void checkoutThreeNOneM() {
         assertEquals(135, checkoutSolution.checkout("NNMNM").intValue());
     }
 
-    @Test public void checkoutThreeRThreeQ() {
+    @Test
+    public void checkoutThreeRThreeQ() {
         assertEquals(210, checkoutSolution.checkout("RRQQRQ").intValue());
     }
+
+    @Test
+    public void checkoutGroupDiscountSZYX() {
+        assertEquals(62, checkoutSolution.checkout("SYXZ").intValue());
+    }
+
 
 }

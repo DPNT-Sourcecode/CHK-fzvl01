@@ -10,7 +10,7 @@ public enum MultiBuyOffer {
     ThreeF(Map.of(Product.F, 3), 0, Product.F, 1),
     FiveH(Map.of(Product.H, 5), 45, Product.H, 5),
     TenH(Map.of(Product.H ,10), 80, Product.H, 10),
-    TwoK(Map.of(Product.K, 2), 150, Product.K, 2),
+    TwoK(Map.of(Product.K, 2), 120, Product.K, 2),
     ThreeN(Map.of(Product.N, 3, Product.M, 1), 0, Product.M, 1),
     FiveP(Map.of(Product.P, 5), 200, Product.P, 5),
     ThreeQ(Map.of(Product.Q, 3), 80, Product.Q, 3),
