@@ -12,7 +12,7 @@ public enum MultiBuyOffer {
 
     private int price;
 
-    private Product replaceProduct;
+    private Product replacedProduct;
 
     private int replacedNumber;
 
@@ -20,13 +20,13 @@ public enum MultiBuyOffer {
 
 
     MultiBuyOffer(Product requiredProduct, int requiredNumber, int price,
-            Product replaceProduct, int replacedNumber) {
+            Product replacedProduct, int replacedNumber) {
         this.requiredProduct = requiredProduct;
         this.requiredNumber = requiredNumber;
         this.price = price;
-        this.replaceProduct = replaceProduct;
+        this.replacedProduct = replacedProduct;
         this.replacedNumber = replacedNumber;
-        this.discount = (replaceProduct.getPrice()* replacedNumber) - price;
+        this.discount = (replacedProduct.getPrice()* replacedNumber) - price;
     }
 
     public Product getRequiredProduct() {
@@ -45,14 +45,15 @@ public enum MultiBuyOffer {
         return discount;
     }
 
-    public Product getReplaceProduct() {
-        return replaceProduct;
+    public Product getReplacedProduct() {
+        return replacedProduct;
     }
 
     public int getReplacedNumber() {
         return replacedNumber;
     }
 }
+
 
 
 

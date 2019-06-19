@@ -31,14 +31,14 @@ public class CheckoutSolution {
 
             for (MultiBuyOffer multiBuyOffer : multiBuyOfferList) {
 
-                if (shoppingCart.get(multiBuyOffer.getRequiredProduct()) >= multiBuyOffer.getRequiredNumber() && shoppingCart.get(multiBuyOffer.getReplaceProduct()) >= multiBuyOffer.getReplacedNumber()) {
-                    shoppingCart.remove(multiBuyOffer.get);
-                }
+                while (shoppingCart.get(multiBuyOffer.getRequiredProduct()) >= multiBuyOffer
+                        .getRequiredNumber()
+                        && shoppingCart.get(multiBuyOffer.getReplacedProduct()) >= multiBuyOffer
+                        .getReplacedNumber()) {
 
-                int countSKU = (int) productList.stream()
-                        .filter(product -> product.equals(multiBuyOffer.getRequiredProduct())).count();
-                int numberOfDiscounts = (countSKU / multiBuyOffer.getRequiredNumber());
-                total = total - (offerDiscount(multiBuyOffer) * numberOfDiscounts);
+                    shoppingCart.remove(multiBuyOffer.getReplacedProduct(), multiBuyOffer.getReplacedNumber());
+                    total = total - multiBuyOffer.getDiscount();
+                }
             }
             return total;
         } catch (IllegalArgumentException e) {
@@ -46,10 +46,8 @@ public class CheckoutSolution {
         }
     }
 
-    private int offerDiscount(MultiBuyOffer offer) {
-        return (offer.getRequiredNumber() * offer.getRequiredProduct().getPrice()) - offer.getPrice();
-    }
 }
+
 
 
 

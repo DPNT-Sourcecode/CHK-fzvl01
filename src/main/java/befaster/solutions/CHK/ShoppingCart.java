@@ -14,9 +14,9 @@ public class ShoppingCart {
         }
     }
 
-    public void remove(Product product) {
+    public void remove(Product product, int num) {
         //can add error validation later
-        productCountMap.replace(product, productCountMap.get(product)-1);
+        productCountMap.replace(product, productCountMap.get(product)-num);
     }
 
     public boolean contains(Product product) {
@@ -28,3 +28,4 @@ public class ShoppingCart {
     }
 
 }
+
