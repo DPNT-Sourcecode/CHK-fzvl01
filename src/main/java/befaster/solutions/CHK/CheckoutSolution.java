@@ -21,7 +21,7 @@ public class CheckoutSolution {
             int total = productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
 
             multiBuyOfferList.forEach(multiBuyOffer -> {
-                int countSKU = (int) productList.stream().filter(product -> product.name().equals(multiBuyOffer.getSKU())).count();
+                int countSKU = (int) productList.stream().filter(product -> product.equals(multiBuyOffer.getProduct())).count();
                 int numberOfDiscounts = (countSKU/multiBuyOffer.getNumberOfItems());
 
             });
@@ -30,7 +30,12 @@ public class CheckoutSolution {
             return -1;
         }
     }
+
+    private int offerDiscount(MultiBuyOffer offer) {
+        return offer.getNumberOfItems()
+    }
 }
+
 
 
 
