@@ -14,10 +14,19 @@ public class HelloSolutionTest {
     }
 
     @Test
-    public void hello() {
-        String expected = "Hello, World!";
+    public void helloNobody() {
+        String expected = "Hello, !";
 
         String actual = helloSolution.hello("");
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void helloJohn() {
+        String expected = "Hello, John!";
+
+        String actual = helloSolution.hello("John");
 
         Assert.assertEquals(expected, actual);
     }
