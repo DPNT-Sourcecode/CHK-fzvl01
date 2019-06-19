@@ -2,6 +2,7 @@ package befaster.solutions.CHK;
 
 public enum MultiBuyOffer {
     ThreeA(Product.A, 3, 130, Product.A, 3),
+    FiveA(Product.A, 5, 200, Product.A, 5),
     TwoB(Product.B, 2, 45, Product.B, 2),
     TwoE(Product.E, 2, 0, Product.B, 1);
 
@@ -25,7 +26,7 @@ public enum MultiBuyOffer {
         this.price = price;
         this.replaceProduct = replaceProduct;
         this.replacedNumber = replacedNumber;
-        this.discount = (requiredProduct.getPrice()* requiredNumber) - price;
+        this.discount = (replaceProduct.getPrice()* replacedNumber) - price;
     }
 
     public Product getRequiredProduct() {
@@ -43,6 +44,15 @@ public enum MultiBuyOffer {
     public int getDiscount() {
         return discount;
     }
+
+    public Product getReplaceProduct() {
+        return replaceProduct;
+    }
+
+    public int getReplacedNumber() {
+        return replacedNumber;
+    }
 }
+
 
 
