@@ -1,14 +1,17 @@
 package befaster.solutions.CHK;
 
 public enum MultiBuyOffer {
-    A(3, 130),
-    B(2, 45);
+    ThreeA("A", 3, 130),
+    TwoB("B", 2, 45);
+
+    private String SKU;
 
     private int numberOfItems;
 
     private int price;
 
-    MultiBuyOffer(int numberOfItems, int price) {
+    MultiBuyOffer(String SKU, int numberOfItems, int price) {
+        this.SKU = SKU;
         this.numberOfItems = numberOfItems;
         this.price = price;
     }
@@ -21,3 +24,4 @@ public enum MultiBuyOffer {
         return price;
     }
 }
+

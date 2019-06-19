@@ -21,7 +21,7 @@ public class CheckoutSolution {
             int total = productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
 
             multiBuyOfferList.forEach(multiBuyOffer -> {
-                int countSKU =
+                int countSKU = productList.stream().filter(product -> {product.name().equals(multiBuyOffer.name())})
             });
 
         } catch (IllegalArgumentException e) {
@@ -29,4 +29,5 @@ public class CheckoutSolution {
         }
     }
 }
+
 
