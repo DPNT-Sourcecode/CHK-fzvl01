@@ -33,10 +33,10 @@ public class CheckoutSolution {
 
                 while (shoppingCart.get(multiBuyOffer.getRequiredProduct()) >= multiBuyOffer
                         .getRequiredNumber()
-                        && shoppingCart.get(multiBuyOffer.getReplacedProduct()) >= multiBuyOffer
-                        .getReplacedNumber()) {
+                        && shoppingCart.get(multiBuyOffer.getDiscountedProduct()) >= multiBuyOffer
+                        .getDiscountedNumber()) {
 
-                    shoppingCart.remove(multiBuyOffer.getReplacedProduct(), multiBuyOffer.getReplacedNumber());
+                    shoppingCart.remove(multiBuyOffer.getDiscountedProduct(), multiBuyOffer.getDiscountedNumber());
                     total = total - multiBuyOffer.getDiscount();
                 }
             }
@@ -47,3 +47,4 @@ public class CheckoutSolution {
     }
 
 }
+
