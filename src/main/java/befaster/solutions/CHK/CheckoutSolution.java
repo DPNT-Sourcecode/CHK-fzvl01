@@ -13,7 +13,7 @@ public class CheckoutSolution {
 
     static {
         multiBuyOfferList = Arrays.asList(MultiBuyOffer.values());
-        multiBuyOfferList.sort(Comparator.comparingInt(MultiBuyOffer::getDiscount));
+        multiBuyOfferList.sort(Comparator.comparingInt(MultiBuyOffer::getDiscount).reversed());
     }
 
     public Integer checkout(String skus) {
@@ -47,6 +47,7 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
 

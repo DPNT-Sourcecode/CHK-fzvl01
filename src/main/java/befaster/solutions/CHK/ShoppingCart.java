@@ -1,10 +1,11 @@
 package befaster.solutions.CHK;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ShoppingCart {
 
-    private Map<Product, Integer> productCountMap;
+    private Map<Product, Integer> productCountMap = new HashMap<>();
 
     public void add(Product product) {
         if (productCountMap.containsKey(product)) {
@@ -26,6 +27,6 @@ public class ShoppingCart {
     public int get(Product product) {
         return productCountMap.getOrDefault(product, 0);
     }
-
 }
+
 
