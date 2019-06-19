@@ -43,7 +43,7 @@ public class ShoppingCart {
      * @param numberToRemove
      * @return number left to remove
      */
-    public int tryToRemove(Product product, int numberToRemove) {
+    public int tryToRemove(int numberToRemove, Product product) {
         //can add error validation later
         int sum = productCountMap.get(product) - numberToRemove;
         if (sum >= 0) {
@@ -56,6 +56,7 @@ public class ShoppingCart {
     }
 
     public void removeMostExpensive(int numberOfProducts, List<Product> products) {
-        products.stream().sorted(Comparator.comparingInt(Product::getPrice))
+        products.stream().sorted(Comparator.comparingInt(Product::getPrice)).reduce(numberOfProducts, )
     }
 }
+
