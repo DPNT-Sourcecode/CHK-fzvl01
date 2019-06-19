@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class CheckoutSolutionTest {
 
-    CheckoutSolution checkoutSolution;
+    private CheckoutSolution checkoutSolution;
 
     @Before
     public void setUp() throws Exception {
@@ -17,7 +17,16 @@ public class CheckoutSolutionTest {
 
     @Test
     public void checkoutNothing() {
+        assertEquals(0, checkoutSolution.checkout("").intValue());
+    }
 
-        Assert.assertEquals(java.util.Optional.of(0).get(), checkoutSolution.checkout(""));
+    @Test
+    public void checkoutSingleItem() {
+        assertEquals(50, checkoutSolution.checkout("A").intValue());
+    }
+
+    @Test
+    public void checkoutMultipleDifferentItems() {
+        assertEquals(85, checkoutSolution.checkout("ACD").intValue());
     }
 }
