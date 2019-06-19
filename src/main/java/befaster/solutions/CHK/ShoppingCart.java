@@ -27,4 +27,11 @@ public class ShoppingCart {
     public int get(Product product) {
         return productCountMap.getOrDefault(product, 0);
     }
+
+    public boolean contains(Map<Product, Integer> products) {
+        products.forEach((product, integer) -> {
+            productCountMap.containsKey(product) && productCountMap.ge
+        });
+    }
 }
+
