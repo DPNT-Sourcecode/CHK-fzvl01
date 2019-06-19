@@ -29,4 +29,9 @@ public class CheckoutSolutionTest {
     public void checkoutMultipleDifferentItems() {
         assertEquals(85, checkoutSolution.checkout("ACD").intValue());
     }
+
+    @Test
+    public void checkoutInvalidSKU() {
+        assertEquals(0, checkoutSolution.checkout("X").intValue());
+    }
 }
