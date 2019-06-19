@@ -32,7 +32,7 @@ public class CheckoutSolutionTest {
 
     @Test
     public void checkoutInvalidSKU() {
-        assertEquals(-1, checkoutSolution.checkout("X").intValue());
+        assertEquals(-1, checkoutSolution.checkout("2").intValue());
     }
 
     @Test
