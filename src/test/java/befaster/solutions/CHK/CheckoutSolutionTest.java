@@ -44,4 +44,12 @@ public class CheckoutSolutionTest {
     public void checkoutManyMultiBuy() {
         assertEquals(375, checkoutSolution.checkout("AAABBAAAAC").intValue());
     }
+
+    @Test
+    public void checkoutCrossMultiBuy() {
+        assertEquals(80, checkoutSolution.checkout("EBE").intValue());
+    }
+
+    @Test
+    public void checkout
 }

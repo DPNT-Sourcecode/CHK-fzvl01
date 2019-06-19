@@ -2,7 +2,9 @@ package befaster.solutions.CHK;
 
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CheckoutSolution {
@@ -18,6 +20,9 @@ public class CheckoutSolution {
 
         try {
             List<Product> productList = Arrays.stream(split).map(Product::valueOf).collect(Collectors.toList());
+
+
+
             int total = productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
 
             for (MultiBuyOffer multiBuyOffer : multiBuyOfferList) {
