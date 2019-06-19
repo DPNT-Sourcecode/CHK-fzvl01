@@ -8,9 +8,16 @@ import java.util.stream.Collectors;
 
 public class CheckoutSolution {
 
-    private List<MultiBuyOffer> multiBuyOfferList = Arrays.asList(MultiBuyOffer.values()).sort(
-            Comparator.comparingInt());
+    private static List<MultiBuyOffer> multiBuyOfferList = Arrays.asList(MultiBuyOffer.values());
 
+    static {
+        multiBuyOfferList.sort(new Comparator<MultiBuyOffer>() {
+            @Override
+            public int compare(MultiBuyOffer o1, MultiBuyOffer o2) {
+                return o1.getDiscount() ;
+            }
+        });
+    }
     public Integer checkout(String skus) {
         if (skus.isEmpty()){
             return 0;
@@ -41,3 +48,4 @@ public class CheckoutSolution {
         return (offer.getNumberOfItems() * offer.getProduct().getPrice()) - offer.getPrice();
     }
 }
+
