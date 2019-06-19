@@ -6,7 +6,8 @@ public enum MultiBuyOffer {
     ThreeA(Map.of(Product.A, 3), 130, Product.A, 3),
     FiveA(Map.of(Product.A, 5), 200, Product.A, 5),
     TwoB(Map.of(Product.B, 2), 45, Product.B, 2),
-    TwoE(Map.of(Product.E, 2, Product.B, 1), 0, Product.B, 1);
+    TwoE(Map.of(Product.E, 2, Product.B, 1), 0, Product.B, 1),
+    ThreeF(Map.of(Product.F, 3), 0, Product.F, 1);
 
     private Map<Product, Integer> requiredProducts;
 
