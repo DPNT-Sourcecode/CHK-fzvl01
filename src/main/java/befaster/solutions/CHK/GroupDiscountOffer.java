@@ -1,5 +1,31 @@
 package befaster.solutions.CHK;
 
-public class GroupDiscountOffer {
+import java.util.List;
 
+public enum GroupDiscountOffer {
+    THREE_OF_STXYZ(List.of(Product.S, Product.T, Product.X, Product.Y, Product.Z), 3, 45);
+
+    private List<Product> productList;
+
+    private int numberOfProducts;
+
+    private int price;
+
+    GroupDiscountOffer(List<Product> productList, int numberOfProducts, int price) {
+        this.productList = productList;
+        this.numberOfProducts = numberOfProducts;
+        this.price = price;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public int getNumberOfProducts() {
+        return numberOfProducts;
+    }
+
+    public int getPrice() {
+        return price;
+    }
 }

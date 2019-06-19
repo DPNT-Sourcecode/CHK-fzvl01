@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public class CheckoutSolution {
 
     private static List<MultiBuyOffer> multiBuyOfferList;
+    private static List<GroupDiscountOffer> groupDiscountOfferList;
     private ShoppingCart shoppingCart;
 
     static {
@@ -45,3 +46,4 @@ public class CheckoutSolution {
     }
 
 }
+
