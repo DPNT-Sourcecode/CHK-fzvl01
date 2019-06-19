@@ -10,10 +10,13 @@ public enum MultiBuyOffer {
 
     private int price;
 
+    private int discount;
+
     MultiBuyOffer(Product product, int numberOfItems, int price) {
         this.product = product;
         this.numberOfItems = numberOfItems;
         this.price = price;
+        this.discount = (product.getPrice()*numberOfItems) - price;
     }
 
     public Product getProduct() {
@@ -26,5 +29,9 @@ public enum MultiBuyOffer {
 
     public int getPrice() {
         return price;
+    }
+
+    public int getDiscount() {
+        return discount;
     }
 }

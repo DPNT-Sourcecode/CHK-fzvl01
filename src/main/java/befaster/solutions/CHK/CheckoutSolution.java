@@ -2,14 +2,14 @@ package befaster.solutions.CHK;
 
 
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CheckoutSolution {
 
-    private List<MultiBuyOffer> multiBuyOfferList = Arrays.asList(MultiBuyOffer.values());
+    private List<MultiBuyOffer> multiBuyOfferList = Arrays.asList(MultiBuyOffer.values()).sort(
+            Comparator.comparingInt());
 
     public Integer checkout(String skus) {
         if (skus.isEmpty()){

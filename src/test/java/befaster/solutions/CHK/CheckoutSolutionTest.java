@@ -51,5 +51,7 @@ public class CheckoutSolutionTest {
     }
 
     @Test
-    public void checkout
+    public void checkoutManyCrossMultiBuy() {
+        assertEquals();
+    }
 }
