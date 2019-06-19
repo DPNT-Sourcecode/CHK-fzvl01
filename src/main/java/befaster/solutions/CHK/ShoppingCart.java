@@ -42,38 +42,22 @@ public class ShoppingCart {
         productCountMap.put(product, productCountMap.get(product) - 1);
     }
 
-    /**
-     *
-     * @param product
-     * @param numberToRemove
-     * @return number left to remove
-     */
-    public int tryToRemove(int numberToRemove, Product product) {
-        //can add error validation later
-        int sum = productCountMap.get(product) - numberToRemove;
-        if (sum >= 0) {
-            productCountMap.put(product, sum);
-            return numberToRemove;
-        } else {
-            productCountMap.put(product, 0);
-            return sum * -1;
-        }
-    }
-
     public int removeMostExpensive(int numberOfProducts, List<Product> products) {
         products.sort(Comparator.comparingInt(Product::getPrice));
         int priceOfRemoved = 0;
 
         for (int i = 0; i < products.size(); i++) {
             Product product = products.get(i);
-            while (get(product) > 0) {
+            while (numberOfProducts > 0 && get(product) > 0) {
                 remove(product);
                 priceOfRemoved += product.getPrice();
+                numberOfProducts --;
             }
         }
-
+        return priceOfRemoved;
     }
 }
+
 
 
 

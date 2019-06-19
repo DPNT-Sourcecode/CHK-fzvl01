@@ -43,8 +43,8 @@ public class CheckoutSolution {
 
             for (GroupDiscountOffer groupDiscountOffer : groupDiscountOfferList) {
                 while (shoppingCart.containsAtLeast(groupDiscountOffer.getNumberOfProducts(), groupDiscountOffer.getProductList())) {
-                    shoppingCart.removeMostExpensive(groupDiscountOffer.getNumberOfProducts(), groupDiscountOffer.getProductList());
-                    total = total
+                    int priceOfRemoved = shoppingCart.removeMostExpensive(groupDiscountOffer.getNumberOfProducts(), groupDiscountOffer.getProductList());
+                    total = total - (priceOfRemoved - groupDiscountOffer.getPrice());
                 }
             }
             return total;
@@ -54,5 +54,6 @@ public class CheckoutSolution {
     }
 
 }
+
 
 
