@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ShoppingCart {
 
@@ -37,6 +38,10 @@ public class ShoppingCart {
         products.forEach((product, num) -> productCountMap.put(product, productCountMap.get(product)-num));
     }
 
+    public void remove(Product product) {
+        productCountMap.put(product, productCountMap.get(product) - 1);
+    }
+
     /**
      *
      * @param product
@@ -55,10 +60,21 @@ public class ShoppingCart {
         }
     }
 
-    public void removeMostExpensive(int numberOfProducts, List<Product> products) {
-        products.stream().sorted(Comparator.comparingInt(Product::getPrice)).reduce(numberOfProducts, this::tryToRemove, Integer::sum);
+    public int removeMostExpensive(int numberOfProducts, List<Product> products) {
+        products.sort(Comparator.comparingInt(Product::getPrice));
+        int priceOfRemoved = 0;
+
+        for (int i = 0; i < products.size(); i++) {
+            Product product = products.get(i);
+            while (get(product) > 0) {
+                remove(product);
+                priceOfRemoved += product.getPrice();
+            }
+        }
+
     }
 }
+
 
 
 
