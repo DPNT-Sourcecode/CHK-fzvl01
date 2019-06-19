@@ -12,18 +12,13 @@ public enum MultiBuyOffer {
 
     private int price;
 
-    private Product discountedProduct;
-
-    private int discountedNumber;
-
     private int discount;
 
 
     MultiBuyOffer(Map<Product, Integer> requiredProducts, int price,
             Product discountedProduct, int discountedNumber) {
+        this.requiredProducts = requiredProducts;
         this.price = price;
-        this.discountedProduct = discountedProduct;
-        this.discountedNumber = discountedNumber;
         this.discount = (discountedProduct.getPrice()* discountedNumber) - price;
     }
 
@@ -38,14 +33,7 @@ public enum MultiBuyOffer {
     public int getDiscount() {
         return discount;
     }
-
-    public Product getDiscountedProduct() {
-        return discountedProduct;
-    }
-
-    public int getDiscountedNumber() {
-        return discountedNumber;
-    }
 }
+
 
 

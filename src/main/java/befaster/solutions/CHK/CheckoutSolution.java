@@ -31,12 +31,8 @@ public class CheckoutSolution {
 
             for (MultiBuyOffer multiBuyOffer : multiBuyOfferList) {
 
-                while (shoppingCart.get(multiBuyOffer.getRequiredProduct()) >= multiBuyOffer
-                        .getRequiredNumber()
-                        && shoppingCart.get(multiBuyOffer.getDiscountedProduct()) >= multiBuyOffer
-                        .getDiscountedNumber()) {
-
-                    shoppingCart.remove(multiBuyOffer.getDiscountedProduct(), multiBuyOffer.getDiscountedNumber());
+                while (shoppingCart.contains(multiBuyOffer.getRequiredProducts())) {
+                    shoppingCart.remove(multiBuyOffer.getRequiredProducts());
                     total = total - multiBuyOffer.getDiscount();
                 }
             }
@@ -47,4 +43,5 @@ public class CheckoutSolution {
     }
 
 }
+
 

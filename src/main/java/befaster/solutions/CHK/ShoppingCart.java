@@ -17,7 +17,7 @@ public class ShoppingCart {
 
     public void remove(Product product, int num) {
         //can add error validation later
-        productCountMap.replace(product, productCountMap.get(product)-num);
+        productCountMap.put(product, productCountMap.get(product)-num);
     }
 
     public boolean contains(Product product) {
@@ -31,6 +31,11 @@ public class ShoppingCart {
     public boolean contains(Map<Product, Integer> products) {
         return products.entrySet().stream().allMatch(productEntry -> productCountMap.containsKey(productEntry.getKey()) && productCountMap.get(productEntry.getKey()) >= productEntry.getValue());
     }
+
+    public void remove(Map<Product, Integer> products) {
+        products.forEach((product, num) -> productCountMap.put(product, productCountMap.get(product)-num));
+    }
 }
+
 
 
