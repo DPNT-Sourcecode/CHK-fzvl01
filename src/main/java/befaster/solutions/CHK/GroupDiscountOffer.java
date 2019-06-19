@@ -1,9 +1,10 @@
 package befaster.solutions.CHK;
 
+import java.util.Arrays;
 import java.util.List;
 
 public enum GroupDiscountOffer {
-    THREE_OF_STXYZ(List.of(Product.S, Product.T, Product.X, Product.Y, Product.Z), 3, 45);
+    THREE_OF_STXYZ(Arrays.asList(Product.S, Product.T, Product.X, Product.Y, Product.Z), 3, 45);
 
     private List<Product> productList;
 
@@ -29,3 +30,4 @@ public enum GroupDiscountOffer {
         return price;
     }
 }
+

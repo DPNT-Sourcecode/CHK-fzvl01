@@ -43,7 +43,7 @@ public class ShoppingCart {
     }
 
     public int removeMostExpensive(int numberOfProducts, List<Product> products) {
-        products.sort(Comparator.comparingInt(Product::getPrice));
+        products.sort(Comparator.comparingInt(Product::getPrice).reversed());
         int priceOfRemoved = 0;
 
         for (int i = 0; i < products.size(); i++) {
@@ -57,6 +57,7 @@ public class ShoppingCart {
         return priceOfRemoved;
     }
 }
+
 
 
 
