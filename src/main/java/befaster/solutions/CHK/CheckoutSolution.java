@@ -20,11 +20,12 @@ public class CheckoutSolution {
             List<Product> productList = Arrays.stream(split).map(Product::valueOf).collect(Collectors.toList());
             int total = productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
 
-            multiBuyOfferList.forEach(multiBuyOffer -> {
-                int countSKU = (int) productList.stream().filter(product -> product.equals(multiBuyOffer.getProduct())).count();
-                int numberOfDiscounts = (countSKU/multiBuyOffer.getNumberOfItems());
-
-            });
+            for (MultiBuyOffer multiBuyOffer : multiBuyOfferList) {
+                int countSKU = (int) productList.stream()
+                        .filter(product -> product.equals(multiBuyOffer.getProduct())).count();
+                int numberOfDiscounts = (countSKU / multiBuyOffer.getNumberOfItems());
+                total = total - (offerDiscount(multiBuyOffer) * numberOfDiscounts);
+            }
 
         } catch (IllegalArgumentException e) {
             return -1;
@@ -32,9 +33,10 @@ public class CheckoutSolution {
     }
 
     private int offerDiscount(MultiBuyOffer offer) {
-        return offer.getNumberOfItems()
+        return (offer.getNumberOfItems() * offer.getProduct().getPrice()) - offer.getPrice();
     }
 }
+
 
 
 

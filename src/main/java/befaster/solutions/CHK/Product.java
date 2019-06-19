@@ -15,8 +15,6 @@ public enum Product {
     public int getPrice() {
         return price;
     }
-
-    @Override
-    public boolean equals
 }
+
 
