@@ -12,12 +12,14 @@ public class CheckoutSolution {
         String[] split = skus.split("");
 
         try {
-            return Arrays.stream(split).map(Product::valueOf).map(Product::getPrice).reduce(0, Integer::sum);
+            int total = Arrays.stream(split).map(Product::valueOf).map(Product::getPrice).reduce(0, Integer::sum);
+            
         } catch (IllegalArgumentException e) {
             return -1;
         }
     }
 }
+
 
 
 
