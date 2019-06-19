@@ -31,7 +31,3 @@ public class ShoppingCart {
         products.forEach((product, num) -> productCountMap.put(product, productCountMap.get(product)-num));
     }
 }
-
-
-
-

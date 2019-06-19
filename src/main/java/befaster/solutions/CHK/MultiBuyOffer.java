@@ -34,6 +34,3 @@ public enum MultiBuyOffer {
         return discount;
     }
 }
-
-
-
