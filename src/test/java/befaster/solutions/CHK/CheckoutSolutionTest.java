@@ -63,4 +63,5 @@ public class CheckoutSolutionTest {
     @Test public void checkoutThreeF() {
         assertEquals(20, checkoutSolution.checkout("FFF").intValue());
     }
+    
 }
