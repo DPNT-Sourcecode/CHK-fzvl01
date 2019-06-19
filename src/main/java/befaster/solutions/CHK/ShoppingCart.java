@@ -37,15 +37,25 @@ public class ShoppingCart {
         products.forEach((product, num) -> productCountMap.put(product, productCountMap.get(product)-num));
     }
 
-    public int tryToRemove(Product product, int num) {
+    /**
+     *
+     * @param product
+     * @param numberToRemove
+     * @return number left to remove
+     */
+    public int tryToRemove(Product product, int numberToRemove) {
         //can add error validation later
-        productCountMap.get(product)
-        productCountMap.replace(product, productCountMap.get(product)-num);
+        int sum = productCountMap.get(product) - numberToRemove;
+        if (sum >= 0) {
+            productCountMap.put(product, sum);
+            return numberToRemove;
+        } else {
+            productCountMap.put(product, 0);
+            return sum * -1;
+        }
     }
 
     public void removeMostExpensive(int numberOfProducts, List<Product> products) {
         products.stream().sorted(Comparator.comparingInt(Product::getPrice))
     }
 }
-
-
