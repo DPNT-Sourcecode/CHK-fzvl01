@@ -11,7 +11,7 @@ public class CheckoutSolutionTest {
     private CheckoutSolution checkoutSolution;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         checkoutSolution = new CheckoutSolution();
     }
 
@@ -38,5 +38,10 @@ public class CheckoutSolutionTest {
     @Test
     public void checkoutMultiBuy() {
         assertEquals(130, checkoutSolution.checkout("AAA").intValue());
+    }
+
+    @Test
+    public void checkoutManyMultiBuy() {
+        assertEquals(375, checkoutSolution.checkout("AAABBAAAAC").intValue());
     }
 }

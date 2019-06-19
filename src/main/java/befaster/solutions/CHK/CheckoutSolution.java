@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class CheckoutSolution {
 
-    List<MultiBuyOffer> multiBuyOfferList = Arrays.asList(MultiBuyOffer.values());
+    private List<MultiBuyOffer> multiBuyOfferList = Arrays.asList(MultiBuyOffer.values());
 
     public Integer checkout(String skus) {
         if (skus.isEmpty()){
@@ -26,7 +26,7 @@ public class CheckoutSolution {
                 int numberOfDiscounts = (countSKU / multiBuyOffer.getNumberOfItems());
                 total = total - (offerDiscount(multiBuyOffer) * numberOfDiscounts);
             }
-
+            return total;
         } catch (IllegalArgumentException e) {
             return -1;
         }
