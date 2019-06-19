@@ -31,8 +31,8 @@ public class CheckoutSolution {
 
             for (MultiBuyOffer multiBuyOffer : multiBuyOfferList) {
                 int countSKU = (int) productList.stream()
-                        .filter(product -> product.equals(multiBuyOffer.getRequirement())).count();
-                int numberOfDiscounts = (countSKU / multiBuyOffer.getNumberOfItems());
+                        .filter(product -> product.equals(multiBuyOffer.getRequiredProduct())).count();
+                int numberOfDiscounts = (countSKU / multiBuyOffer.getRequiredNumber());
                 total = total - (offerDiscount(multiBuyOffer) * numberOfDiscounts);
             }
             return total;
@@ -42,7 +42,8 @@ public class CheckoutSolution {
     }
 
     private int offerDiscount(MultiBuyOffer offer) {
-        return (offer.getNumberOfItems() * offer.getRequirement().getPrice()) - offer.getPrice();
+        return (offer.getRequiredNumber() * offer.getRequiredProduct().getPrice()) - offer.getPrice();
     }
 }
+
 
