@@ -28,5 +28,3 @@ public enum Product {
         return offer;
     }
 }
-
-
