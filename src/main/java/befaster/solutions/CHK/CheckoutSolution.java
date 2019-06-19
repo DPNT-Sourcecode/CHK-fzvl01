@@ -3,6 +3,7 @@ package befaster.solutions.CHK;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CheckoutSolution {
 
@@ -16,10 +17,16 @@ public class CheckoutSolution {
         String[] split = skus.split("");
 
         try {
-            int total = Arrays.stream(split).map(Product::valueOf).map(Product::getPrice).reduce(0, Integer::sum);
+            List<Product> productList = Arrays.stream(split).map(Product::valueOf).collect(Collectors.toList());
+            int total = productList.stream().map(Product::getPrice).reduce(0, Integer::sum);
+
+            multiBuyOfferList.forEach(multiBuyOffer -> {
+                int countSKU =
+            });
 
         } catch (IllegalArgumentException e) {
             return -1;
         }
     }
 }
+
