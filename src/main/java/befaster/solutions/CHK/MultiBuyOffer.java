@@ -3,10 +3,10 @@ package befaster.solutions.CHK;
 import java.util.Map;
 
 public enum MultiBuyOffer {
-    ThreeA(Product.A, 3, 130, Product.A, 3),
-    FiveA(Product.A, 5, 200, Product.A, 5),
-    TwoB(Product.B, 2, 45, Product.B, 2),
-    TwoE(Product.E, 2, 0, Product.B, 1);
+    ThreeA(Map.of(Product.A, 3), 130, Product.A, 3),
+    FiveA(Map.of(Product.A, 5), 200, Product.A, 5),
+    TwoB(Map.of(Product.B, 2), 45, Product.B, 2),
+    TwoE(Map.of(Product.E, 2, Product.B, 1), 0, Product.B, 1);
 
     private Map<Product, Integer> requiredProducts;
 
@@ -47,4 +47,5 @@ public enum MultiBuyOffer {
         return discountedNumber;
     }
 }
+
 
