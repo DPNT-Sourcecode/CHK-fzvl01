@@ -52,6 +52,6 @@ public class CheckoutSolutionTest {
 
     @Test
     public void checkoutManyCrossMultiBuy() {
-//        assertEquals();
+        assertEquals(110, checkoutSolution.checkout("EBEB").intValue());
     }
 }
