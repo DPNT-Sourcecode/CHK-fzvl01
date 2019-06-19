@@ -10,7 +10,8 @@ public enum MultiBuyOffer {
     ThreeF(Map.of(Product.F, 3), 0, Product.F, 1),
     FiveH(Map.of(Product.H, 5), 45, Product.H, 5),
     TenH(Map.of(Product.H ,10), 80, Product.H, 10),
-    TwoK(Map.of(Product.K, 2), 150, Product.K, 2);
+    TwoK(Map.of(Product.K, 2), 150, Product.K, 2),
+    ThreeN(Map.of(Product.N, 3, Product.M, 1), 0, Product.M, 1);
 
     private Map<Product, Integer> requiredProducts;
 
@@ -38,3 +39,4 @@ public enum MultiBuyOffer {
         return discount;
     }
 }
+
